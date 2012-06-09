@@ -264,7 +264,7 @@ class HttpBrowser(object):
         if data is not None:
             try:
                 data = urllib.urlencode(data)
-            except TypeError:
+            except TypeError, AttributeError:
                 pass # ignore if someone sends in an already prepared string
 
         url = self.base_url + path
